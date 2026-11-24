@@ -1,0 +1,131 @@
+/* Global reset and shared components for the FlowGuard design system. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-md);
+  line-height: 1.5;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-navy);
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: var(--text-lg);
+}
+
+h3 {
+  font-size: var(--text-md);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+/* Card */
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-5);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: 10px 18px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn--primary {
+  background: var(--color-teal);
+  color: var(--color-navy);
+}
+
+.btn--primary:hover {
+  background: #1bb496;
+}
+
+.btn--secondary {
+  background: var(--color-white);
+  color: var(--color-navy);
+  border-color: var(--color-border);
+}
+
+.btn--secondary:hover {
+  background: var(--color-bg);
+}
+
+.btn--danger {
+  background: var(--color-red);
+  color: var(--color-white);
+}
+
+.btn--danger:hover {
+  background: #d24a54;
+}
+
+/* Priority and status badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.badge--low {
+  background: var(--color-mint);
+  color: var(--color-slate);
+}
+
+.badge--medium {
+  background: var(--color-amber-tint);
+  color: #8a5a00;
+}
+
+.badge--high {
+  background: var(--color-amber);
+  color: var(--color-navy);
+}
+
+.badge--critical {
+  background: var(--color-red-tint);
+  color: #b4303b;
+}

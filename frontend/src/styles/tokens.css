@@ -1,0 +1,42 @@
+/* FlowGuard design tokens: the single source of truth for colours, spacing and sizes. */
+:root {
+  /* Brand palette */
+  --color-navy: #101c2c;
+  --color-slate: #1c3445;
+  --color-teal: #20c9a6;
+  --color-mint: #d7f5ea;
+  --color-bg: #f5f7fa;
+  --color-white: #ffffff;
+  --color-amber: #f4b740;
+  --color-red: #e45b65;
+
+  /* Text and borders */
+  --color-text: #101c2c;
+  --color-text-muted: #5b6b7b;
+  --color-border: #e3e8ee;
+
+  /* Tinted backgrounds for status badges */
+  --color-amber-tint: #fdf1d6;
+  --color-red-tint: #fbe3e5;
+
+  /* Typography */
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-sm: 0.8125rem;
+  --text-md: 0.9375rem;
+  --text-lg: 1.125rem;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* Shape and depth */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(16, 28, 44, 0.06);
+  --shadow-md: 0 4px 14px rgba(16, 28, 44, 0.08);
+}

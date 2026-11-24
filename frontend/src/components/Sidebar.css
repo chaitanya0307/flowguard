@@ -1,0 +1,101 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 260px;
+  padding: var(--space-5) var(--space-4);
+  background: var(--color-navy);
+  color: var(--color-white);
+  overflow-y: auto;
+  transition: transform 0.2s ease;
+}
+
+.sidebar__brand {
+  padding: 0 var(--space-2) var(--space-3);
+}
+
+.sidebar__section {
+  padding: 0 var(--space-3);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.sidebar__link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px var(--space-3);
+  border-radius: var(--radius-sm);
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.sidebar__link:hover {
+  background: var(--color-slate);
+  color: var(--color-white);
+}
+
+.sidebar__link--active {
+  background: var(--color-slate);
+  color: var(--color-white);
+  box-shadow: inset 3px 0 0 var(--color-teal);
+}
+
+.sidebar__footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.sidebar__demo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0 var(--space-3);
+}
+
+.sidebar__demo-link {
+  padding: 4px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.sidebar__demo-link--active {
+  background: var(--color-teal);
+  border-color: var(--color-teal);
+  color: var(--color-navy);
+}
+
+/* Tablet and mobile: the sidebar slides in over the page */
+@media (max-width: 1023px) {
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+    box-shadow: var(--shadow-md);
+  }
+}

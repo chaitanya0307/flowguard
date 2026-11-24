@@ -1,0 +1,28 @@
+# ---------- Java / Maven (backend) ----------
+target/
+*.class
+*.jar
+*.log
+HELP.md
+
+# ---------- Node / React (frontend) ----------
+node_modules/
+dist/
+build/
+.vite/
+
+# ---------- Secrets and local config ----------
+.env
+.env.local
+*.env
+application-local.properties
+
+# ---------- Uploaded evidence files ----------
+uploads/
+
+# ---------- IDE and OS files ----------
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,52 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo__check {
+  fill: none;
+  stroke-width: 3.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.logo__text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Light theme: for white or light backgrounds */
+.logo--light .logo__shield {
+  fill: var(--color-navy);
+}
+
+.logo--light .logo__check {
+  stroke: var(--color-teal);
+}
+
+.logo--light .logo__text {
+  color: var(--color-navy);
+}
+
+.logo--light .logo__accent {
+  color: #139c82;
+}
+
+/* Dark theme: for the navy sidebar */
+.logo--dark .logo__shield {
+  fill: var(--color-teal);
+}
+
+.logo--dark .logo__check {
+  stroke: var(--color-navy);
+}
+
+.logo--dark .logo__text {
+  color: var(--color-white);
+}
+
+.logo--dark .logo__accent {
+  color: var(--color-teal);
+}

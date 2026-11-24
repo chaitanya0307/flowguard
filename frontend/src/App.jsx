@@ -1,4 +1,5 @@
 import './App.css'
+import Logo from './components/Logo.jsx'
 
 const brandColors = [
   { name: 'Midnight Navy', hex: '#101C2C' },
@@ -15,11 +16,23 @@ function App() {
   return (
     <main className="preview">
       <header className="preview__header">
-        <h1>FlowGuard design system</h1>
+        <Logo size={44} theme="light" />
         <p className="text-muted">
           Every issue deserves an owner. Every resolution needs proof.
         </p>
       </header>
+
+      <section className="preview__logos">
+        <div className="card preview__logo-box">
+          <Logo size={40} theme="light" />
+        </div>
+        <div className="preview__logo-box preview__logo-box--dark">
+          <Logo size={40} theme="dark" />
+        </div>
+        <div className="card preview__logo-box">
+          <Logo size={40} showText={false} />
+        </div>
+      </section>
 
       <section className="swatch-grid">
         {brandColors.map((color) => (

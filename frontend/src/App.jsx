@@ -4,12 +4,15 @@ import DashboardLayout from './layouts/DashboardLayout.jsx'
 import Login from './pages/auth/Login.jsx'
 import Register from './pages/auth/Register.jsx'
 import EmployeeDashboard from './pages/employee/EmployeeDashboard.jsx'
+import NewIssue from './pages/employee/NewIssue.jsx'
 import PagePlaceholder from './pages/PagePlaceholder.jsx'
 import { navigation } from './config/navigation.js'
 
-// Roles that already have a real dashboard page. The others still use a placeholder.
-const dashboardPages = {
+// Pages that are already built. Key format: "role" for the dashboard home, "role/path" for others.
+// Anything not listed here still shows a placeholder.
+const pageComponents = {
   employee: EmployeeDashboard,
+  'employee/new-issue': NewIssue,
 }
 
 function App() {
@@ -22,39 +25,29 @@ function App() {
         <Route path="/register" element={<Register />} />
       </Route>
 
-      {Object.keys(navigation).map((role) => {
-        const HomePage = dashboardPages[role]
+      {Object.keys(navigation).map((role) => (
+        <Route
+          key={role}
+          path={`/${role}`}
+          element={<DashboardLayout role={role} />}
+        >
+          {navigation[role].map((item) => {
+            const pageKey = item.path ? `${role}/${item.path}` : role
+            const Page = pageComponents[pageKey]
+            const element = Page ? (
+              <Page />
+            ) : (
+              <PagePlaceholder title={item.label} />
+            )
 
-        return (
-          <Route
-            key={role}
-            path={`/${role}`}
-            element={<DashboardLayout role={role} />}
-          >
-            {navigation[role].map((item) =>
-              item.path ? (
-                <Route
-                  key={item.path}
-                  path={item.path}
-                  element={<PagePlaceholder title={item.label} />}
-                />
-              ) : (
-                <Route
-                  key="home"
-                  index
-                  element={
-                    HomePage ? (
-                      <HomePage />
-                    ) : (
-                      <PagePlaceholder title={item.label} />
-                    )
-                  }
-                />
-              ),
-            )}
-          </Route>
-        )
-      })}
+            return item.path ? (
+              <Route key={pageKey} path={item.path} element={element} />
+            ) : (
+              <Route key={pageKey} index element={element} />
+            )
+          })}
+        </Route>
+      ))}
 
       <Route path="*" element={<PagePlaceholder title="Page not found" />} />
     </Routes>

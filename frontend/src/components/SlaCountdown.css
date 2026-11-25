@@ -1,0 +1,24 @@
+.sla {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.sla--ok {
+  color: #0f7a66;
+}
+
+.sla--risk {
+  color: #8a5a00;
+}
+
+.sla--breached {
+  color: #b4303b;
+}
+
+.sla--done {
+  color: var(--color-text-muted);
+}

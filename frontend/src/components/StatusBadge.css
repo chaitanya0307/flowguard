@@ -1,0 +1,48 @@
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status--open {
+  background: #e8eef4;
+  color: var(--color-slate);
+}
+
+.status--assigned {
+  background: #e3edf7;
+  color: #2b5c8a;
+}
+
+.status--in-progress {
+  background: var(--color-mint);
+  color: #0f7a66;
+}
+
+.status--pending-verification {
+  background: var(--color-amber-tint);
+  color: #8a5a00;
+}
+
+.status--closed {
+  background: #eef1f4;
+  color: var(--color-text-muted);
+}
+
+.status--reopened {
+  background: var(--color-red-tint);
+  color: #b4303b;
+}
